@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class SlimeAI : MonoBehaviour //don't forget to change the script name if you haven't
+public class SlimeAI : MonoBehaviour
 {
     public NavMeshAgent agent;
     public float range; //radius of sphere
@@ -19,7 +19,7 @@ public class SlimeAI : MonoBehaviour //don't forget to change the script name if
 
     void Update()
     {
-        if (agent.remainingDistance <= agent.stoppingDistance) //done with path
+        if (agent.remainingDistance <= agent.stoppingDistance)
         {
             Vector3 point;
             if (RandomPoint(centrePoint.position, range, out point)) //pass in our centre point and radius of area

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +10,11 @@ public class GameManager : MonoBehaviour
 
     public static GameManager gm;
     public int score;
+
+    public Text subtitle;
+
+    public Text hudScore;
+
     public int healthy;
     public float boostTimer;
     public float slowTimer;
@@ -21,7 +28,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(healthy <= 0)
+        hudScore.text = score.ToString();
+
+        if (healthy <= 0)
         {
             UnityEditor.EditorApplication.isPlaying = false;
         }
